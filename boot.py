@@ -1,9 +1,8 @@
+# Connect to the network from C.H.I.P
 import network
-sta_if = network.WLAN(network.STA_IF)
-ap_if = network.WLAN(network.AP_IF)
-sta_if.active(True)
-sta_if.connect('Siidisaba7', 'Varst1onuv1!')
-
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect("itcollege")
 
 # Synchronize clock
 import ntptime
@@ -16,5 +15,3 @@ name = "esp-%s" % binascii.hexlify(wlan.config("mac")[-3:]).decode("ascii")
 # Clean up
 import gc
 gc.collect()
-
-
